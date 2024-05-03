@@ -3,7 +3,6 @@ const bodyParser = require('body-parser');
 const fs = require('fs');
 const path = require('path');
 const app = express();
-const PORT = process.env.PORT || 5000;
 
 const opportunityFilePath = path.join(__dirname, 'opportunity.json');
 
@@ -28,22 +27,9 @@ function writeOpportunityData(data) {
     }
 }
 
-// Define a route handler for the root path
 app.get('/', (req, res) => {
-    // Read data from the opportunity.json file
-    fs.readFile(opportunityFilePath, 'utf8', (err, data) => {
-        if (err) {
-            console.error('Error reading opportunity data:', err);
-            res.status(500).json({ error: 'Internal Server Error' });
-            return;
-        }
-
-        // Parse the JSON data
-        const opportunities = JSON.parse(data);
-
-        // Send the opportunities data as JSON response
-        res.json(opportunities);
-    });
+    // Serve your API documentation or homepage
+    res.send('Welcome to my API!');
 });
 
 app.get('/opportunities', (req, res) => {
@@ -87,6 +73,11 @@ app.post('/opportunities/:id/articles', (req, res) => {
     }
 });
 
+// Serve static files (optional)
+// app.use(express.static('public'));
+
+// Start the server
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
