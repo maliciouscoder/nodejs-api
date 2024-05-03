@@ -1,0 +1,40 @@
+[
+  {
+    "id": 1,
+    "name": "Opportunity 1",
+    "description": "Description of opportunity 1",
+    "articles": [
+      {
+        "id": 1,
+        "opportunityId": 1,
+        "title": "Article 1",
+        "content": "Content of article 1"
+      },
+      {
+        "id": 2,
+        "opportunityId": 1,
+        "title": "Article 2",
+        "content": "Content of article 2"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Opportunity 2",
+    "description": "Description of opportunity 2",
+    "articles": [
+      {
+        "id": 3,
+        "opportunityId": 2,
+        "title": "Article 3",
+        "content": "Content of article 3"
+      }
+    ]
+  },
+  {
+    "name": "New Opportunity",
+    "description": "Description of the new opportunity",
+    "articles": [],
+    "id": 3
+  }
+]
